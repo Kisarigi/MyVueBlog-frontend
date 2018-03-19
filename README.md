@@ -16,7 +16,7 @@ webpack打包问题啦，服务器上配置CROS跨域啦，最后调通了实在
 
 
 ## 演示图片
-![1](https://wx2.sinaimg.cn/mw1024/006SncqLgy1fpie8k9hlpj31gr0q9770.jpg)
+![1](https://wx1.sinaimg.cn/mw1024/006SncqLgy1fpied5jmgwj31gs0q30vf.jpg)
 ![1](https://wx4.sinaimg.cn/mw1024/006SncqLgy1fpie8o6ll6j31gp0q81bk.jpg)
 ![1](https://wx4.sinaimg.cn/mw1024/006SncqLgy1fpie8qubq8j31gu0q34qp.jpg)
 
