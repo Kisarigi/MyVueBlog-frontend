@@ -12,10 +12,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/article/*':{
-      target:'http://localhost:3000'
+      target:'http://39.108.214.182:3000'
        },
        '/message/*':{
-       target:'http://localhost:3000'
+       target:'http://39.108.214.182:3000'
         },
     },
 

@@ -8,7 +8,7 @@
         <div v-for="item in getMsg">
           <div class="comments-one">
       <div class="nam">       {{item.name}}：           </div>
-      <div class="cont lineline">                        {{item.content}} </div>
+      <div class="cont">                        {{item.content}} </div>
       <div class="time">       {{formatDate1(item.date)}} </div>
 
         </div>
@@ -82,7 +82,7 @@ export default {
       }
     },
     getMessage(){
-      axios.get('/message/getMessage').then((res)=>{
+      axios.get('http://39.108.214.182:3000/message/getMessage').then((res)=>{
        this.comCount=res.data.result.count;
        this.comments=res.data.result.list;
        this.curCom=this.comments.slice(0,5);
@@ -93,7 +93,7 @@ export default {
      return date.slice(4,25)
    },
     submit1(){
-      axios.post("/message/addMessage",{
+      axios.post("http://39.108.214.182:3000/message/addMessage",{
       name:this.name,
       Email:this.Email,
       content:this.content,

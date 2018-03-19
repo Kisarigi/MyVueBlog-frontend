@@ -1,5 +1,6 @@
 <template lang="html">
 <div>
+
   <el-table class="tabtab"
       :data="lessarticle"
       style="width: 100%">
@@ -44,6 +45,10 @@
         <el-table-column
           prop="date"
           label="留言日期">
+        </el-table-column>
+        <el-table-column
+          prop="Email"
+          label="联系邮箱">
         </el-table-column>
         <el-table-column
           label="操作">
@@ -95,7 +100,7 @@ export default {
   },
   methods:{
     getCommentsByAxios(){
-      axios.get('/message/getMessage').then(res=>{
+      axios.get('http://39.108.214.182:3000/message/getMessage').then(res=>{
       this.commentsAll=res.data.result;
       })
     },
@@ -103,7 +108,7 @@ export default {
       this.commentsAll=this.$store.state.message;
     },
     deleteMessage(id){
-      axios.post("/message/deleteMessage",{
+      axios.post("http://39.108.214.182:3000/message/deleteMessage",{
       _id:id,
       }).then((res)=>{
 
@@ -115,7 +120,7 @@ export default {
       this.lessContent=render;
     },
     submit(){
-      axios.post("/article/addArticle",{
+      axios.post("http://39.108.214.182:3000/article/addArticle",{
       title:this.title,
       type:this.type,
       content:this.content,
@@ -130,13 +135,13 @@ export default {
     },
 
     getArticle(){
-    axios.get('/article/getArticle').then(res=>{
+    axios.get('http://39.108.214.182:3000/article/getArticle').then(res=>{
     this.lessarticle=res.data.result.list;
     })
     },
 
     deleteArticle(id){
-      axios.post("/article/deleteArticle",{
+      axios.post("http://39.108.214.182:3000/article/deleteArticle",{
       _id:id,
     }).then((res)=>{
       this.getArticle();

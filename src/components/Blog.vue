@@ -25,6 +25,7 @@
         <div class="tags" v-for="item in getTheType" >
          <el-button @click="changeArticle(item)"class="tags-button"type="primary" plain>{{item}}</el-button>
         </div>
+         <el-button @click="getArticle()"type="danger tags-button tags" plain>显示所有文章</el-button>
       </div>
 
       <message></message>
@@ -51,7 +52,7 @@ export default {
   },
   methods:{
     changeArticle(type){
-    axios.get('/article/changeArticle?'+'type='+type).then((res)=>{
+    axios.get('http://39.108.214.182:3000/article/changeArticle?'+'type='+type).then((res)=>{
     this.$store.commit('setTypeArticleAll',res.data.result.list);
     this.$store.commit('setCount',res.data.result.count);
     let child = this.$refs.alist;
@@ -60,7 +61,7 @@ export default {
   },
 
   getArticle(){
-    axios.get('/article/getArticle').then((res)=>{
+    axios.get('http://39.108.214.182:3000/article/getArticle').then((res)=>{
     this.$store.commit('setTypeArticleAll',res.data.result.list);
     this.$store.commit('setCount',res.data.result.count);
     let atemp=[];
@@ -174,7 +175,11 @@ body {
 .article-type-content{
   margin-top: 100px;
   border-bottom: 1px solid #E4E7ED;
-
+}
+.article-type-content:after {
+    display: table;
+    content: " ";
+    clear: both;
 }
 .article-type-text{
   color:#909399;

@@ -14,13 +14,18 @@ export default new Router({
       component: blog
     },
     {
+      path: '/',
+      name: 'blog',
+      component: blog
+    },
+    {
       path: '/admin',
       name: 'admin',
       component: admin
     },
     {
-      path: '/showArticle',
-      name: 'showArticle',
+      path: '/showarticle',
+      name: 'article',
       component: article
     },
   ]
